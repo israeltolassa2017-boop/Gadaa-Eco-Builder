@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Gadaa Eco Builder – Portfolio</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f2eb;
+      color: #1e2a1e;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .portfolio {
+      max-width: 1100px;
+      width: 100%;
+      background: #ffffff;
+      padding: 50px 55px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      text-align: center;
+      border-bottom: 4px solid #b48b3a;
+      padding-bottom: 25px;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #1e3a2e;
+      letter-spacing: 1px;
+    }
+
+    .header h1 span {
+      color: #b48b3a;
+    }
+
+    .header .subtitle {
+      font-size: 18px;
+      color: #4a5a4a;
+      font-weight: 400;
+      margin-top: 6px;
+    }
+
+    .header .tagline {
+      font-size: 15px;
+      color: #7a8a7a;
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    /* ===== IMAGE ROW ===== */
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin: 25px 0 20px 0;
+    }
+
+    .image-box {
+      flex: 1 1 150px;
+      min-width: 120px;
+      max-width: 200px;
+      background: #f0ede6;
+      border: 2px solid #b48b3a;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .image-box:hover {
+      transform: scale(1.03);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      background: #e5e0d5;
+    }
+
+    .image-box .caption {
+      font-size: 12px;
+      color: #4a5a4a;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* ===== SECTION STYLES ===== */
+    h2 {
+      font-size: 22px;
+      color: #1e3a2e;
+      border-left: 5px solid #b48b3a;
+      padding-left: 14px;
+      margin: 35px 0 18px 0;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #2a3a2a;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin: 12px 0 18px 30px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #2a3a2a;
+    }
+
+    ul li {
+      margin-bottom: 4px;
+    }
+
+    /* ===== RECOGNITION TABLE ===== */
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 30px;
+      background: #f8f6f0;
+      padding: 18px 24px;
+      border-radius: 12px;
+      margin: 15px 0 20px 0;
+    }
+
+    .recognition-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14.5px;
+      padding: 5px 0;
+      border-bottom: 1px solid #e5e0d5;
+    }
+
+    .recognition-item .label {
+      font-weight: 600;
+      color: #1e3a2e;
+    }
+
+    .recognition-item .value {
+      color: #4a6a4a;
+    }
+
+    .recognition-item .status {
+      color: #b48b3a;
+      font-weight: 600;
+    }
+
+    /* ===== LINKS ===== */
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 30px;
+      background: #f8f6f0;
+      padding: 16px 24px;
+      border-radius: 12px;
+      margin: 15px 0 20px 0;
+    }
+
+    .links-grid a {
+      color: #1e3a2e;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .links-grid a:hover {
+      color: #b48b3a;
+      text-decoration: underline;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 25px;
+      border-top: 2px solid #e5e0d5;
+      font-size: 15px;
+      color: #2a3a2e;
+    }
+
+    .contact .email {
+      font-weight: 600;
+      color: #1e3a2e;
+      font-size: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #8a9a8a;
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 1px solid #e5e0d5;
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+      .portfolio {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 40px 50px;
+        max-width: 100%;
+      }
+      .image-box {
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+      }
+      .image-box:hover {
+        transform: none;
+      }
+      .recognition-grid,
+      .links-grid {
+        background: #f5f5f5;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+      .portfolio {
+        padding: 25px 18px;
+        border-radius: 10px;
+      }
+      .header h1 {
+        font-size: 26px;
+      }
+      .image-box {
+        flex: 1 1 100px;
+        min-width: 80px;
+        max-width: 150px;
+      }
+      .recognition-grid {
+        grid-template-columns: 1fr;
+        padding: 14px 16px;
+      }
+      .links-grid {
+        grid-template-columns: 1fr;
+        padding: 14px 16px;
+      }
+      ul {
+        margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .portfolio {
+        padding: 16px 12px;
+      }
+      .header h1 {
+        font-size: 22px;
+      }
+      .header .subtitle {
+        font-size: 15px;
+      }
+      .image-box {
+        flex: 1 1 70px;
+        min-width: 60px;
+        max-width: 110px;
+        padding: 6px;
+      }
+      .image-box .caption {
+        font-size: 10px;
+      }
+      h2 {
+        font-size: 18px;
+        padding-left: 10px;
+        margin: 25px 0 12px 0;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      ul {
+        font-size: 14px;
+        margin-left: 18px;
+      }
+      .recognition-item {
+        font-size: 12.5px;
+        flex-wrap: wrap;
+        gap: 2px;
+      }
+      .links-grid a {
+        font-size: 12.5px;
+      }
+      .contact {
+        font-size: 14px;
+        margin-top: 28px;
+        padding-top: 18px;
+      }
+      .contact .email {
+        font-size: 14px;
+      }
+      .footer {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="portfolio">
+
+  <!-- ==================== HEADER ==================== -->
+  <div class="header">
+    <h1>GADAA ECO <span>BUILDER</span></h1>
+    <div class="subtitle">Gamifying Indigenous Knowledge for Climate Action</div>
+    <div class="tagline">Israel Tolessa Hinkossa – Founder</div>
+  </div>
+
+  <!-- ==================== IMAGES (5) ==================== -->
+  <div class="image-row">
+
+    <!-- IMAGE 1: WAITING LIST WEBSITE -->
+    <div class="image-box">
+      <img src="https://i.ibb.co/4g27H83J/Waiting-list-screnshot.jpg" alt="Waiting List Website" loading="lazy" />
+      <div class="caption">🌐 Waiting List Website</div>
+    </div>
+
+    <!-- IMAGE 2: VIDEO PLAYER SCREENSHOT -->
+    <div class="image-box">
+      <img src="https://i.ibb.co/qFMkLt7C/Screenshot-20260812-175521-Video-Player.jpg" alt="Video Player Screenshot" loading="lazy" />
+      <div class="caption">🎥 Video Player</div>
+    </div>
+
+    <!-- IMAGE 3: TELEGRAM BOT / GAMEPLAY -->
+    <div class="image-box">
+      <img src="https://i.ibb.co/6RN2FwKk/1d59acc1-6e33-4bce-bf47-5d32d8423236.jpg" alt="Telegram Bot / Gameplay" loading="lazy" />
+      <div class="caption">🤖 Telegram Bot</div>
+    </div>
+
+    <!-- IMAGE 4: FIELD WORK / PLANTING -->
+    <div class="image-box">
+      <img src="https://i.ibb.co/2YpQ9L4K/20260506-080012.jpg" alt="Field Work / Planting" loading="lazy" />
+      <div class="caption">🌿 Field Work & Planting</div>
+    </div>
+
+    <!-- IMAGE 5: RESTORATION WORK -->
+    <div class="image-box">
+      <img src="https://i.ibb.co/BKTGn8pm/5366825d-8695-427c-974b-9135898d71b6.jpg" alt="Restoration Work" loading="lazy" />
+      <div class="caption">🌱 Restoration Work</div>
+    </div>
+
+  </div>
+
+  <!-- ==================== ABOUT ==================== -->
+  <h2>About the Project</h2>
+  <p><strong>Gadaa Eco Builder</strong> is a growing initiative connecting <strong>Oromo indigenous knowledge</strong>, <strong>ecological restoration</strong>, <strong>climate action</strong>, <strong>education</strong>, and <strong>interactive gaming</strong>.</p>
+  <p>I am developing the project as an independent initiative and building its foundation step by step.</p>
+
+  <!-- ==================== WHAT I'M LOOKING FOR ==================== -->
+  <h2>What I Am Looking For</h2>
+  <p>I am looking for people and organizations who can help open the next door for Gadaa Eco Builder, including:</p>
+  <ul>
+    <li>Fellowships and grant opportunities</li>
+    <li>Training and accelerator programs</li>
+    <li>Scholarships and learning opportunities</li>
+    <li>Vacancies, paid roles, consultancies, or project opportunities</li>
+    <li>Introductions to organizations, funders, mentors, or partners</li>
+    <li>Invitations to relevant programs, events, exchanges, or opportunities abroad</li>
+    <li>Small early funding, sponsorship, or other practical support</li>
+  </ul>
+  <p><strong>I am not only looking for direct funding.</strong> A recommendation, introduction, training opportunity, or invitation to the right program could also become an important next step.</p>
+
+  <!-- ==================== LONG-TERM VISION ==================== -->
+  <h2>Long-Term Vision</h2>
+  <p>The long-term vision is to connect the digital Gadaa Eco Builder experience with <strong>real-world ecological restoration</strong>, <strong>cultural learning</strong>, <strong>community participation</strong>, and <strong>future physical destinations</strong>.</p>
+  <p>Ideas such as Odaa-inspired destinations and Gadaa Eco Builder Valley are part of the long-term direction. The immediate focus is on developing the core project, proving what works, and growing step by step.</p>
+
+  <!-- ==================== DOCUMENTED & RECOGNIZED ==================== -->
+  <h2>Documented &amp; Recognized</h2>
+  <div class="recognition-grid">
+    <div class="recognition-item"><span class="label">UN Case Study</span><span class="value">UNDRR PreventionWeb</span><span class="status">✅ Published</span></div>
+    <div class="recognition-item"><span class="label">Solution Documentation</span><span class="value">IUCN PANORAMA</span><span class="status">✅ Published</span></div>
+    <div class="recognition-item"><span class="label">Trees Planted</span><span class="value">Amerti-Nashe Valley</span><span class="status">✅ 1,500+</span></div>
+    <div class="recognition-item"><span class="label">Land Cleared</span><span class="value">Roadside restoration</span><span class="status">✅ 1.5 km</span></div>
+    <div class="recognition-item"><span class="label">Project Website</span><span class="value">gadaaroots.netlify.app</span><span class="status">✅ Live</span></div>
+    <div class="recognition-item"><span class="label">Telegram Bot</span><span class="value">t.me/gadaaecobuilderbot</span><span class="status">✅ Live</span></div>
+  </div>
+
+  <!-- ==================== EXPLORE THE PROJECT ==================== -->
+  <h2>Explore the Project</h2>
+  <div class="links-grid">
+    <a href="https://gadaaroots.netlify.app" target="_blank">🌐 Project Website</a>
+    <a href="https://t.me/gadaaecobuilderbot" target="_blank">🤖 Telegram Bot</a>
+    <a href="https://www.linkedin.com/in/israel-tolessa-5t" target="_blank">🔗 LinkedIn</a>
+    <a href="https://www.preventionweb.net/case-study/gamifying-gadaa-indigenous-knowledge-meets-real-trees" target="_blank">📄 UN Case Study</a>
+    <a href="https://panorama.solutions/en/solution/gadaa-eco-builder-gamifying-indigenous-knowledge-reforestation" target="_blank">🌍 IUCN PANORAMA</a>
+  </div>
+
+  <!-- ==================== IF YOU KNOW A DOOR ==================== -->
+  <h2>If You Know a Door</h2>
+  <p>If you know of a fellowship, grant, training, vacancy, paid opportunity, invitation, funder, mentor, organization, or partnership that could fit Gadaa Eco Builder or my work, I would genuinely appreciate being pointed toward it.</p>
+  <p>The project is growing, and I am looking for the people and opportunities that can help take the next step.</p>
+
+  <!-- ==================== CONTACT ==================== -->
+  <div class="contact">
+    <p><strong>📧 Contact</strong><br /><span class="email">israeltolassa2017@gmail.com</span></p>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <div class="footer">
+    GADAA ECO BUILDER – From Indigenous Knowledge to Climate Action.
+  </div>
+
+</div>
+
+</body>
+</html>
